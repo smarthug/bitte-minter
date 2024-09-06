@@ -13,7 +13,7 @@
   },
   "dependencies": {
     "@hookform/resolvers": "^3.3.2",
-    "@mintbase-js/react":"0.5.5-beta.2",
+    "@mintbase-js/react": "0.6.4",
     "@mintbase-js/sdk": "0.5.5-beta.2",
     "@mintbase-js/storage": "0.5.5-beta.2",
     "@radix-ui/react-label": "^2.0.2",
