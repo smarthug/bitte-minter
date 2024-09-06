@@ -6,11 +6,11 @@ import GradientButton from './GradientButton';
 // Styled Card component
 const StyledCard = styled(Card)(({ theme }) => ({
     maxWidth: 345,
-    minWidth: 230,
+    // minWidth: 230,
     margin: 'auto',
     borderRadius: 12,
     boxShadow: theme.shadows[5],
-    position: 'relative',
+    // position: 'relative',
     paddingBottom: theme.spacing(2),
     padding: theme.spacing(2),
 }));

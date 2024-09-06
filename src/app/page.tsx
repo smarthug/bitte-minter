@@ -12,7 +12,7 @@ import { mbUrl, nearblocksUrl } from "@/config/setup";
 import { getTxnHash } from "@/hooks/utils";
 import { useEffect, useState } from "react";
 import Link from "next/link";
-import { Box, styled } from "@mui/material";
+import { Box, Container, styled } from "@mui/material";
 
 // const modelDetails = {
 //   modelName: 'Image Classification Model',
@@ -59,11 +59,20 @@ const modelDetails = [
 ];
 
 const HorizontalContainer = styled(Box)(({ theme }) => ({
+  // display: "flex",
+  // flexDirection: "row",
+  // gap: theme.spacing(4), // 카드 사이의 간격
+  // overflowX: "auto", // 가로로 넘칠 경우 스크롤 추가
+  // padding: theme.spacing(2),
+
   display: "flex",
-  flexDirection: "row",
-  gap: theme.spacing(4), // 카드 사이의 간격
-  overflowX: "auto", // 가로로 넘칠 경우 스크롤 추가
-  padding: theme.spacing(2),
+  overflowX: "auto",
+  width: "100%",
+  gap: "16px", // 카드 간의 간격을 설정
+  padding: "16px", // 컨테이너 padding
+  "&::-webkit-scrollbar": {
+    display: "none", // 모바일에서 스크롤바 숨기기 (optional)
+  },
 }));
 
 export default function Home() {
@@ -106,7 +115,17 @@ export default function Home() {
 
   if (isConnected)
     return (
-      <main className="flex flex-col items-center justify-center mt-2 ">
+      <Container
+        maxWidth="lg"
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          overflow: "auto",
+          height: "100vh",
+          // paddingTop: "164px",
+        }}
+      >
         <NearWalletConnector />
         {/* <Link href="/training">training</Link> */}
         <HorizontalContainer>
@@ -115,7 +134,7 @@ export default function Home() {
           <TrainigCard modelDetails={modelDetails[2]} />
         </HorizontalContainer>
         {/* <Minter /> */}
-      </main>
+      </Container>
     );
 
   return (
@@ -123,15 +142,17 @@ export default function Home() {
       <main className="flex flex-col items-center justify-center mt-2 ">
         <div className="flex flex-1 flex-col w-full flex flex-col justify-center items-center space-y-8  min-h-screen text-gray-500">
           <Head>
-            <title>Mintbase - Simple Minter Example</title>
+            <title>Federated Learning</title>
           </Head>
-          <div className="mx-6 sm:mx-24 mt-4 mb-4">
+          <div className=" mt-4 mb-4">
             <div className="w-full flex flex-col justify-center items-center">
               <div className="w-full flex flex-col justify-center items-center space-y-8">
                 <div className="flex flex-col justify-center items-center space-y-8">
-                  <h1 className="h1-90 text-5xl text-white">Mintbase Minter</h1>
+                  <h1 className="h1-90 text-5xl text-white">
+                    Federated Learning
+                  </h1>
                   <h2 className="p-big-90 text-white">
-                    A simple NFT Minter on Mintbase
+                    Federated Learning
                     <Link href="/training">training</Link>
                   </h2>
                 </div>
