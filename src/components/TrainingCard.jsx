@@ -1,5 +1,5 @@
 import React from 'react';
-import { Card, CardContent, Typography, Chip, styled, Button } from '@mui/material';
+import { Card, CardContent, Typography, Chip, styled } from '@mui/material';
 import Link from 'next/link';
 import GradientButton from './GradientButton';
 
