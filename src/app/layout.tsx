@@ -20,13 +20,12 @@ const extractSignMeta = (url: string): string | null => {
 };
 
 export async function generateMetadata(): Promise<Metadata> {
-
   const headersList = headers();
   const referer = headersList.get("referer");
 
-
   let pageTitle = "Mintbase Minter Example";
-  let pageDescription = "Learn how to Mint NFTs on NEAR with Mintbase Minter Example"
+  let pageDescription =
+    "Learn how to Mint NFTs on NEAR with Mintbase Minter Example";
 
   // Check if signMeta exists in the URL
   const signMeta = referer ? extractSignMeta(referer) : "";
@@ -34,7 +33,7 @@ export async function generateMetadata(): Promise<Metadata> {
     const signMetaData = JSON.parse(decodeURIComponent(signMeta));
 
     pageTitle = `Success! You just minted: ${signMetaData?.args?.title}`;
-    pageDescription = `Just Minted ${signMetaData?.args?.title} on Mintbase`
+    pageDescription = `Just Minted ${signMetaData?.args?.title} on Mintbase`;
     // Now you can further process the extracted signMeta value
   }
 
@@ -42,9 +41,9 @@ export async function generateMetadata(): Promise<Metadata> {
     metadataBase: new URL("https://minter.mintbase.xyz"),
     title: pageTitle,
     openGraph: {
-      title:pageTitle,
+      title: pageTitle,
       description: pageDescription,
-      images:['./thumbnail.png'],
+      images: ["./thumbnail.png"],
     },
     twitter: {
       title: pageTitle,
@@ -52,7 +51,7 @@ export async function generateMetadata(): Promise<Metadata> {
       siteId: "1467726470533754880",
       creator: "Mintbase",
       card: "summary_large_image",
-      images: './thumbnail.png'
+      images: "./thumbnail.png",
     },
   };
 }
@@ -62,5 +61,6 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
-  return <AppProvider> <SocialMedias /> {children} </AppProvider>;
+  // return <AppProvider> <SocialMedias /> {children} </AppProvider>;
+  return <AppProvider> {children} </AppProvider>;
 }

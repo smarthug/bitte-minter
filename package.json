@@ -1,6 +1,13 @@
 {
   "name": "Minter-Mintbase",
-  "keywords": ["templates", "mintbase", "web3", "nextjs", "react", "minter"],
+  "keywords": [
+    "templates",
+    "mintbase",
+    "web3",
+    "nextjs",
+    "react",
+    "minter"
+  ],
   "repository": "https://github.com/mintbase/templates.git",
   "homepage": "https;//templates.mintbase.xyz/minter",
   "author": "Mintbase Team <eng@mintbase.xyz>",
@@ -12,10 +19,14 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@emotion/react": "^11.13.3",
+    "@emotion/styled": "^11.13.0",
+    "@fontsource/roboto": "^5.0.14",
     "@hookform/resolvers": "^3.3.2",
     "@mintbase-js/react": "0.6.4",
     "@mintbase-js/sdk": "0.5.5-beta.2",
     "@mintbase-js/storage": "0.5.5-beta.2",
+    "@mui/material": "^6.0.2",
     "@radix-ui/react-label": "^2.0.2",
     "@radix-ui/react-slot": "^1.0.2",
     "class-variance-authority": "^0.7.0",

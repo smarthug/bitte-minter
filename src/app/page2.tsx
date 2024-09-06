@@ -55,8 +55,7 @@ const txnHashes = params.get("transactionHashes")
     return (
       <main className="flex flex-col items-center justify-center mt-2 ">
         <NearWalletConnector />
-        <Link href="/training">training</Link>
-        {/* <Minter /> */}
+        <Minter />
       </main>
     );
 
