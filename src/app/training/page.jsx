@@ -1,7 +1,8 @@
 'use client'
 // src/App.js
 import React, { useState } from "react";
-import { Container, Grid2 } from "@mui/material";
+import { Container, Grid } from "@mui/material";
+// import Grid from '@mui/material/Grid2';
 import ProgressWithTimeout from "@/components/ProgressBar";
 import SimpleProgress from "@/components/SimpleProgress";
 
@@ -17,32 +18,57 @@ const items = [
   },
 ];
 
+// const App = () => {
+//   const [purchasedItems, setPurchasedItems] = useState([]);
+
+//   const handlePurchase = (item) => {};
+
+//   return (
+//     <Container
+//       maxWidth="xs"
+//       style={{
+//         display: "flex",
+//         justifyContent: "center",
+//         alignItems: "center",
+//         overflow: "auto",
+//         // paddingTop: "164px",
+//       }}
+//     >
+//       <Grid2 container spacing={2}>
+//         <Grid2 item xs={12} sm={12} md={12}>
+//             {/* <ProgressWithTimeout /> */}
+//             <SimpleProgress />
+//         </Grid2>
+//       </Grid2>
+//     </Container>
+//   );
+// };
+
 const App = () => {
-  const [purchasedItems, setPurchasedItems] = useState([]);
-
-  const handlePurchase = (item) => {};
-
-  return (
-    <Container
-      maxWidth="xs"
-      style={{
-        display: "flex",
-        justifyContent: "center",
-        alignItems: "center",
-        overflow: "auto",
-        // paddingTop: "164px",
-      }}
-    >
-      <Grid2 container spacing={2}>
-        <Grid2 item xs={12} sm={12} md={12}>
-            <h1>Shop</h1>
-            {/* <ProgressWithTimeout /> */}
-            <SimpleProgress />
-        </Grid2>
-      </Grid2>
-    </Container>
-  );
-};
+    const [purchasedItems, setPurchasedItems] = useState([]);
+  
+    const handlePurchase = (item) => {};
+  
+    return (
+      <Container
+        maxWidth="xs"
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          overflow: "auto",
+          // paddingTop: "164px",
+        }}
+      >
+        <Grid container spacing={2}>
+          <Grid item xs={12} sm={12} md={12}>
+              <ProgressWithTimeout />
+              {/* <SimpleProgress /> */}
+          </Grid>
+        </Grid>
+      </Container>
+    );
+  };
 
 export default App;
 

@@ -8,7 +8,7 @@ const LinearProgressWithLabel = (props) => {
                 <LinearProgress variant="determinate" {...props} />
             </Box>
             <Box minWidth={35}>
-                <Typography variant="body2" color="textSecondary">{`${Math.round(
+                <Typography variant="body2" color="primary">{`${Math.round(
                     props.value,
                 )}%`}</Typography>
             </Box>
@@ -32,7 +32,7 @@ const ProgressWithTimeout = () => {
 
     return (
         <Box width="100%">
-            <LinearProgressWithLabel value={50} />
+            <LinearProgressWithLabel value={progress} />
         </Box>
     );
 };
