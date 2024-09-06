@@ -102,15 +102,24 @@ function Row(props) {
 
 
 
-const rows = [
-  createData( 1, 6.0, 24, 4.0, 3.99),
-  createData( 2, 9.0, 37, 4.3, 4.99),
-  createData( 3, 16.0, 24, 6.0, 3.79),
-  createData( 4, 3.7, 67, 4.3, 2.5),
-  createData( 5, 16.0, 49, 3.9, 1.5),
-];
+
 
 export default function CollapsibleTable() {
+
+  // accracy , trainers
+  const rows = [
+    createData(1, 6.0, calculateIncentives(6.0)),
+    createData(2, 9.0, calculateIncentives(9.0)),
+    createData(3, 16.0, calculateIncentives(16.0)),
+    createData(4, 3.7, calculateIncentives(3.7)),
+    createData(5, 16.0, calculateIncentives(16.0)),
+  ];
+
+  function calculateIncentives(accuracy) {
+    return accuracy * 4;
+  }
+
+
   return (
     <TableContainer component={Paper}>
       <Table aria-label="collapsible table">
