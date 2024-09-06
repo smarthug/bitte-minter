@@ -55,7 +55,7 @@ const modelDetails = [
       { label: "Share Location", value: "location" },
       { label: "Upload Images", value: "images" },
     ],
-  }
+  },
 ];
 
 const HorizontalContainer = styled(Box)(({ theme }) => ({
@@ -82,7 +82,9 @@ export default function Home() {
   useEffect(() => {
     const fetchTxnHash = async () => {
       const txn = await getTxnHash(txnHashes as string);
-      setTxnUrl(txn);
+      if (txn) {
+        setTxnUrl(txn);
+      }
     };
 
     fetchTxnHash();

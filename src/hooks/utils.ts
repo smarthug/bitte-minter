@@ -44,6 +44,8 @@ export const cbUrl = (hash: string, callbackArgs: CallbackArgs) =>
 
 export const getTxnHash = async (hash: string) => {
   console.log(hash)
+
+  return hash;
   // const res = await fetch(`${nearblocksApi}/v1/search/?keyword=${hash}`);
   // const txn = await res.json();
   // console.log(txn);
