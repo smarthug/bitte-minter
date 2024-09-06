@@ -13,7 +13,7 @@ import Paper from '@mui/material/Paper';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
 
-function createData(round, accuracy, incentives) {
+function createData(round, accuracy, incentives, trainers) {
   return {
 
     round,
@@ -21,18 +21,18 @@ function createData(round, accuracy, incentives) {
     incentives,
     history: [
       {
-        date: '2020-01-05',
-        customerId: '11091700',
+
+        customerId: trainers[0],
         amount: 3,
       },
       {
-        date: '2020-01-02',
-        customerId: 'Anonymous',
+
+        customerId: trainers[1],
         amount: 1,
       },
       {
-        date: '2020-01-04',
-        customerId: 'Anonymous',
+
+        customerId: trainers[2],
         amount: 4,
       },
     ],
@@ -71,19 +71,19 @@ function Row(props) {
               <Table size="small" aria-label="purchases">
                 <TableHead>
                   <TableRow>
-                    <TableCell>Date</TableCell>
-                    <TableCell>Customer</TableCell>
+                    <TableCell>Name</TableCell>
+
                     <TableCell align="right">Amount</TableCell>
                     <TableCell align="right">Total price ($)</TableCell>
                   </TableRow>
                 </TableHead>
                 <TableBody>
                   {row.history.map((historyRow) => (
-                    <TableRow key={historyRow.date}>
+                    <TableRow key={historyRow.customerId}>
                       <TableCell component="th" scope="row">
-                        {historyRow.date}
+                        {historyRow.customerId}
                       </TableCell>
-                      <TableCell>{historyRow.customerId}</TableCell>
+
                       <TableCell align="right">{historyRow.amount}</TableCell>
                       <TableCell align="right">
                         {Math.round(historyRow.amount * row.incentives * 100) / 100}
@@ -104,17 +104,17 @@ function Row(props) {
 
 
 
-export default function CollapsibleTable({roundAverages}) {
+export default function CollapsibleTable({ roundAverages, trainersList }) {
+  console.log(trainersList)
 
-  
 
   // accracy , trainers
   const rows = [
-    createData(1, roundAverages[0], calculateIncentives(roundAverages[0])),
-    createData(2, roundAverages[1], calculateIncentives(roundAverages[1])),
-    createData(3, roundAverages[2], calculateIncentives(roundAverages[2])),
-    createData(4, roundAverages[3], calculateIncentives(roundAverages[3])),
-    createData(5, roundAverages[4], calculateIncentives(roundAverages[4])),
+    createData(1, roundAverages[0], calculateIncentives(roundAverages[0]), trainersList[0]),
+    createData(2, roundAverages[1], calculateIncentives(roundAverages[1]), trainersList[1]),
+    createData(3, roundAverages[2], calculateIncentives(roundAverages[2]), trainersList[2]),
+    createData(4, roundAverages[3], calculateIncentives(roundAverages[3]), trainersList[3]),
+    createData(5, roundAverages[4], calculateIncentives(roundAverages[4]), trainersList[4]),
   ];
 
   function calculateIncentives(accuracy) {
