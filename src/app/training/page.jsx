@@ -39,7 +39,7 @@ console.log(MockJSON)
 // };
 
 const App = () => {
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(false);
   const [data, setData] = useState([]);
 
   useEffect(() => {
