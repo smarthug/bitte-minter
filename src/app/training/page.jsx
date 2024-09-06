@@ -1,12 +1,14 @@
 'use client'
 // src/App.js
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Container, Grid } from "@mui/material";
 // import Grid from '@mui/material/Grid2';
 // import ProgressWithTimeout from "@/components/ProgressBar";
 import SimpleProgress from "@/components/SimpleProgress";
 import RoundTable from "@/components/RoundTable";
 import GradientCircular from "@/components/GradientCircular";
+import MockJSON from '../../../mock.json'
+console.log(MockJSON)
 
 
 
@@ -37,34 +39,46 @@ import GradientCircular from "@/components/GradientCircular";
 // };
 
 const App = () => {
-  const [loading , setLoading] = useState(true);
-  
-    return (
-      <Container
-        maxWidth="lg"
-        style={{
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
-          overflow: "auto",
-          height: "100vh",
-          // paddingTop: "164px",
-        }}
-      >
-      
-              {/* <ProgressWithTimeout /> */}
-              {/* <SimpleProgress /> */}
+  const [loading, setLoading] = useState(true);
+  const [data, setData] = useState([]);
 
-              {
-                loading ? <GradientCircular/> : <RoundTable />
-              }
+  useEffect(() => {
 
-             
-              {/* <GradientCircular /> */}
-     
-      </Container>
-    );
-  };
+    setTimeout(() => {
+      setLoading(false);
+    }
+
+      , 3000);
+  }
+    , []);
+
+
+  return (
+    <Container
+      maxWidth="lg"
+      style={{
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        overflow: "auto",
+        height: "100vh",
+        // paddingTop: "164px",
+      }}
+    >
+
+      {/* <ProgressWithTimeout /> */}
+      {/* <SimpleProgress /> */}
+
+      {
+        loading ? <GradientCircular /> : <RoundTable />
+      }
+
+
+      {/* <GradientCircular /> */}
+
+    </Container>
+  );
+};
 
 export default App;
 
