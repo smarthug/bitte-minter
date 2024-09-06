@@ -63,18 +63,9 @@ const ModelCard = ({
 };
 
 // Example usage
-export default function TrainingCard() {
+export default function TrainingCard({modelDetails}) {
     // 이거 밖에서 와야함
-    const modelDetails = {
-        modelName: 'Image Classification Model',
-        requiredParticipants: 10,
-        rewardRate: 100,
-        restrictions: [
-            { label: 'Android Only', value: 'android' },
-            { label: 'Share Location', value: 'location' },
-            { label: 'Upload Images', value: 'images' },
-        ],
-    };
+   
 
     const userCriteria = ['android', 'location']; // User meets android and location restrictions
 

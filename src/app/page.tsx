@@ -14,11 +14,55 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 import { Box, styled } from "@mui/material";
 
+// const modelDetails = {
+//   modelName: 'Image Classification Model',
+//   requiredParticipants: 10,
+//   rewardRate: 100,
+//   restrictions: [
+//       { label: 'Android Only', value: 'android' },
+//       { label: 'Share Location', value: 'location' },
+//       { label: 'Upload Images', value: 'images' },
+//   ],
+// };
+
+const modelDetails = [
+  {
+    modelName: "Image Classification Model",
+    requiredParticipants: 10,
+    rewardRate: 100,
+    restrictions: [
+      { label: "Android Only", value: "android" },
+      { label: "Share Location", value: "location" },
+      { label: "Upload Images", value: "images" },
+    ],
+  },
+  {
+    modelName: "Image Classification Model",
+    requiredParticipants: 10,
+    rewardRate: 100,
+    restrictions: [
+      { label: "Android Only", value: "android" },
+      { label: "Share Location", value: "location" },
+      { label: "Upload Images", value: "images" },
+    ],
+  },
+  {
+    modelName: "Image Classification Model",
+    requiredParticipants: 20,
+    rewardRate: 70,
+    restrictions: [
+      { label: "IOS Only", value: "ios" },
+      { label: "Share Location", value: "location" },
+      { label: "Upload Images", value: "images" },
+    ],
+  }
+];
+
 const HorizontalContainer = styled(Box)(({ theme }) => ({
-  display: 'flex',
-  flexDirection: 'row',
-  gap: theme.spacing(2), // 카드 사이의 간격
-  overflowX: 'auto', // 가로로 넘칠 경우 스크롤 추가
+  display: "flex",
+  flexDirection: "row",
+  gap: theme.spacing(4), // 카드 사이의 간격
+  overflowX: "auto", // 가로로 넘칠 경우 스크롤 추가
   padding: theme.spacing(2),
 }));
 
@@ -64,9 +108,9 @@ export default function Home() {
         <NearWalletConnector />
         {/* <Link href="/training">training</Link> */}
         <HorizontalContainer>
-          <TrainigCard />
-          <TrainigCard />
-          <TrainigCard />
+          <TrainigCard modelDetails={modelDetails[0]} />
+          <TrainigCard modelDetails={modelDetails[1]} />
+          <TrainigCard modelDetails={modelDetails[2]} />
         </HorizontalContainer>
         {/* <Minter /> */}
       </main>
