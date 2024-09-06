@@ -104,15 +104,17 @@ function Row(props) {
 
 
 
-export default function CollapsibleTable() {
+export default function CollapsibleTable({roundAverages}) {
+
+  
 
   // accracy , trainers
   const rows = [
-    createData(1, 6.0, calculateIncentives(6.0)),
-    createData(2, 9.0, calculateIncentives(9.0)),
-    createData(3, 16.0, calculateIncentives(16.0)),
-    createData(4, 3.7, calculateIncentives(3.7)),
-    createData(5, 16.0, calculateIncentives(16.0)),
+    createData(1, roundAverages[0], calculateIncentives(roundAverages[0])),
+    createData(2, roundAverages[1], calculateIncentives(roundAverages[1])),
+    createData(3, roundAverages[2], calculateIncentives(roundAverages[2])),
+    createData(4, roundAverages[3], calculateIncentives(roundAverages[3])),
+    createData(5, roundAverages[4], calculateIncentives(roundAverages[4])),
   ];
 
   function calculateIncentives(accuracy) {
