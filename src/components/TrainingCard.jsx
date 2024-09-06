@@ -35,7 +35,7 @@ const ModelCard = ({
                     Required Participants: {requiredParticipants}
                 </Typography>
                 <Typography variant="body2" color="text.secondary">
-                    Reward Rate: {rewardRate}%
+                    Total Reward: ${rewardRate}
                 </Typography>
             </CardContent>
 
@@ -66,8 +66,8 @@ const ModelCard = ({
 export default function TrainingCard() {
     const modelDetails = {
         modelName: 'Image Classification Model',
-        requiredParticipants: 100,
-        rewardRate: 10,
+        requiredParticipants: 10,
+        rewardRate: 100,
         restrictions: [
             { label: 'Android Only', value: 'android' },
             { label: 'Share Location', value: 'location' },
