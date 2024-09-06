@@ -2,6 +2,7 @@
 
 import { useMbWallet } from "@mintbase-js/react";
 import { NearWalletConnector } from "@/components/NearWalletSelector";
+import TrainigCard from "@/components/TrainingCard";
 
 import Head from "next/head";
 import Minter from "@/components/Minter";
@@ -11,21 +12,28 @@ import { mbUrl, nearblocksUrl } from "@/config/setup";
 import { getTxnHash } from "@/hooks/utils";
 import { useEffect, useState } from "react";
 import Link from "next/link";
+import { Box, styled } from "@mui/material";
 
+const HorizontalContainer = styled(Box)(({ theme }) => ({
+  display: 'flex',
+  flexDirection: 'row',
+  gap: theme.spacing(2), // 카드 사이의 간격
+  overflowX: 'auto', // 가로로 넘칠 경우 스크롤 추가
+  padding: theme.spacing(2),
+}));
 
 export default function Home() {
   const { isConnected } = useMbWallet();
   const [txnUrl, setTxnUrl] = useState("");
 
-
   const params = useSearchParams();
 
   const mintedParams = params.get("signMeta")
-  ? JSON.parse(params.get("signMeta") as string)
-  : "";
-const txnHashes = params.get("transactionHashes")
-  ? params.get("transactionHashes")
-  : "";
+    ? JSON.parse(params.get("signMeta") as string)
+    : "";
+  const txnHashes = params.get("transactionHashes")
+    ? params.get("transactionHashes")
+    : "";
 
   useEffect(() => {
     const fetchTxnHash = async () => {
@@ -40,10 +48,9 @@ const txnHashes = params.get("transactionHashes")
     const metaPage = `${mbUrl}/ref/${mintedParams.args.ref}?type=meta`;
     const txnHashUrl = `${nearblocksUrl}/txns/${txnUrl}`;
 
-
     const successPageData = {
       nftTitle: mintedParams.args.title as string,
-      mediaUrl: mintedParams.args.mediaUrl  as string,
+      mediaUrl: mintedParams.args.mediaUrl as string,
       metaPage,
       txnHashUrl,
     };
@@ -55,7 +62,12 @@ const txnHashes = params.get("transactionHashes")
     return (
       <main className="flex flex-col items-center justify-center mt-2 ">
         <NearWalletConnector />
-        <Link href="/training">training</Link>
+        {/* <Link href="/training">training</Link> */}
+        <HorizontalContainer>
+          <TrainigCard />
+          <TrainigCard />
+          <TrainigCard />
+        </HorizontalContainer>
         {/* <Minter /> */}
       </main>
     );
