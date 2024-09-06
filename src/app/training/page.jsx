@@ -3,21 +3,12 @@
 import React, { useState } from "react";
 import { Container, Grid } from "@mui/material";
 // import Grid from '@mui/material/Grid2';
-import ProgressWithTimeout from "@/components/ProgressBar";
+// import ProgressWithTimeout from "@/components/ProgressBar";
 import SimpleProgress from "@/components/SimpleProgress";
 import RoundTable from "@/components/RoundTable";
+import GradientCircular from "@/components/GradientCircular";
 
 
-
-const items = [
-  {
-    id: 1,
-    name: "The Crown",
-    description: "A crown that grants the wearer unlimited power",
-    price: 1000000,
-    image: "/imgs/crown.png",
-  },
-];
 
 // const App = () => {
 //   const [purchasedItems, setPurchasedItems] = useState([]);
@@ -46,28 +37,31 @@ const items = [
 // };
 
 const App = () => {
-    const [purchasedItems, setPurchasedItems] = useState([]);
-  
-    const handlePurchase = (item) => {};
+  const [loading , setLoading] = useState(true);
   
     return (
       <Container
-        maxWidth="xs"
+        maxWidth="lg"
         style={{
           display: "flex",
           justifyContent: "center",
           alignItems: "center",
           overflow: "auto",
+          height: "100vh",
           // paddingTop: "164px",
         }}
       >
-        <Grid container spacing={2}>
-          <Grid item xs={12} sm={12} md={12}>
-              <ProgressWithTimeout />
+      
+              {/* <ProgressWithTimeout /> */}
               {/* <SimpleProgress /> */}
-              <RoundTable />
-          </Grid>
-        </Grid>
+
+              {
+                loading ? <GradientCircular/> : <RoundTable />
+              }
+
+             
+              {/* <GradientCircular /> */}
+     
       </Container>
     );
   };
