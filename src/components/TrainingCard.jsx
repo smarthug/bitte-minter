@@ -1,10 +1,12 @@
 import React from 'react';
 import { Card, CardContent, Typography, Chip, styled, Button } from '@mui/material';
 import Link from 'next/link';
+import GradientButton from './GradientButton';
 
 // Styled Card component
 const StyledCard = styled(Card)(({ theme }) => ({
     maxWidth: 345,
+    minWidth: 230,
     margin: 'auto',
     borderRadius: 12,
     boxShadow: theme.shadows[5],
@@ -54,9 +56,7 @@ const ModelCard = ({
                 ))}
             </CardContent>
             <Link href="/training">
-                <Button fullWidth variant="contained" color="primary">
-                    Participate
-                </Button>
+                <GradientButton />
             </Link>
         </StyledCard>
     );
@@ -64,6 +64,7 @@ const ModelCard = ({
 
 // Example usage
 export default function TrainingCard() {
+    // 이거 밖에서 와야함
     const modelDetails = {
         modelName: 'Image Classification Model',
         requiredParticipants: 10,
