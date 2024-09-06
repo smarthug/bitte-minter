@@ -3,6 +3,7 @@ import { Metadata } from "next";
 import { headers } from "next/headers";
 import "./globals.css";
 import { SocialMedias } from "@/components/Social";
+import { NearWalletConnector } from "@/components/NearWalletSelector";
 
 const extractSignMeta = (url: string): string | null => {
   const signMetaIndex = url.indexOf("signMeta=");
@@ -62,5 +63,5 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   // return <AppProvider> <SocialMedias /> {children} </AppProvider>;
-  return <AppProvider> {children} </AppProvider>;
+  return <AppProvider> {children}  </AppProvider>;
 }
