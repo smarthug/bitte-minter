@@ -5,6 +5,7 @@ import { Container, Grid } from "@mui/material";
 // import Grid from '@mui/material/Grid2';
 import ProgressWithTimeout from "@/components/ProgressBar";
 import SimpleProgress from "@/components/SimpleProgress";
+import RoundTable from "@/components/RoundTable";
 
 
 
@@ -64,6 +65,7 @@ const App = () => {
           <Grid item xs={12} sm={12} md={12}>
               <ProgressWithTimeout />
               {/* <SimpleProgress /> */}
+              <RoundTable />
           </Grid>
         </Grid>
       </Container>
