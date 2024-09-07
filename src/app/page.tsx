@@ -148,18 +148,15 @@ export default function Home() {
       <main className="flex flex-col items-center justify-center mt-2 ">
         <div className="flex flex-1 flex-col w-full flex flex-col justify-center items-center space-y-8  min-h-screen text-gray-500">
           <Head>
-            <title>Federated Learning</title>
+            <title>P2PDL</title>
           </Head>
           <div className=" mt-4 mb-4">
             <div className="w-full flex flex-col justify-center items-center">
               <div className="w-full flex flex-col justify-center items-center space-y-8">
                 <div className="flex flex-col justify-center items-center space-y-8">
-                  <h1 className="h1-90 text-5xl text-white">
-                    Federated Learning
-                  </h1>
+                  <h1 className="h1-90 text-5xl text-white">P2PDL</h1>
                   <h2 className="p-big-90 text-white">
-                    Federated Learning
-                    <Link href="/training">training</Link>
+                    The decentralized peer-to-peer machine learning platform
                   </h2>
                 </div>
                 <div>
