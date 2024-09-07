@@ -67,7 +67,7 @@ export default function TrainingCard({modelDetails}) {
     // 이거 밖에서 와야함
    
 
-    const userCriteria = ['android', 'location']; // User meets android and location restrictions
+    const userCriteria = ['android', 'location','digit_images','background','type','front_camera','cross_platform']; // User meets android and location restrictions
 
     return (
         <div>

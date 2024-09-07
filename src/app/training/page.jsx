@@ -7,6 +7,7 @@ import { Container, Grid } from "@mui/material";
 import SimpleProgress from "@/components/SimpleProgress";
 import RoundTable from "@/components/RoundTable";
 import GradientCircular from "@/components/GradientCircular";
+import Minter from "@/components/Minter";
 import MockJSON from '../../../mock.json'
 console.log(MockJSON)
 
@@ -81,6 +82,46 @@ const App = () => {
 
   useEffect(() => {
 
+    // const postData = async () => {
+    //   try {
+    //     const response = await fetch('https://example.com/api', {
+    //       method: 'POST', // HTTP 메서드 설정
+    //       headers: {
+    //         'Content-Type': 'application/json',
+    //         'Authorization': 'Bearer token', // 필요한 경우 인증 헤더 추가
+    //       },
+    //       body: JSON.stringify({
+    //         key1: 'value1',
+    //         key2: 'value2',
+    //       }), // 요청에 보낼 데이터
+    //     });
+
+    //     if (!response.ok) {
+    //       throw new Error('네트워크 응답이 정상적이지 않습니다');
+    //     }
+
+    //     const data = await response.json(); // 응답 데이터를 JSON으로 변환
+    //     console.log('응답 데이터:', data);
+
+    //     const tmp = calculateAccuracyAverage(MockJSON)
+    //     // console.log(tmp)
+    //     setRoundAverages(tmp)
+
+    //     const trainersList = getTrainersList(MockJSON);
+    //     console.log(trainersList);
+    //     setTrainersList(trainersList);
+
+    //     setLoading(false);
+    //   } catch (error) {
+    //     console.error('에러 발생:', error);
+    //   }
+    // };
+
+    // postData();
+
+
+    /////////////////////////////////////////
+
     const tmp = calculateAccuracyAverage(MockJSON)
     // console.log(tmp)
     setRoundAverages(tmp)
@@ -91,9 +132,7 @@ const App = () => {
 
     setTimeout(() => {
       setLoading(false);
-    }
-
-      , 1000);
+    }, 1000);
   }
     , []);
 
@@ -115,7 +154,12 @@ const App = () => {
       {/* <SimpleProgress /> */}
 
       {
-        loading ? <GradientCircular /> : <RoundTable roundAverages={roundAverages} trainersList={trainersList} />
+        loading ? <GradientCircular /> :
+          <>
+
+            <RoundTable roundAverages={roundAverages} trainersList={trainersList} />
+            <Minter />
+          </>
       }
 
 

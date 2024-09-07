@@ -30,7 +30,7 @@ export default function Minter() {
       <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
         <Card>
           <CardHeader>
-            <CardTitle>Mint your Outcome</CardTitle>
+            <CardTitle>Mint your NFT</CardTitle>
           </CardHeader>
           <CardContent>
             <FormField
@@ -39,7 +39,7 @@ export default function Minter() {
               render={({ field }) => (
                 <FormItem>
                   <FormControl>
-                    <Input  placeholder="Title" {...field} value="Handwritten Digit Recognition" />
+                    <Input placeholder="Title" {...field} />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
@@ -52,7 +52,7 @@ export default function Minter() {
               render={({ field }) => (
                 <FormItem>
                   <FormControl>
-                    <Textarea placeholder="Description" {...field} value="Handwritten digit images from users' devices" />
+                    <Textarea placeholder="Description" {...field} />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
@@ -95,7 +95,7 @@ export default function Minter() {
             />
           </CardContent>
           <CardFooter className="justify-center items-center">
-            <Button type="submit">Mint</Button>
+            <Button type="submit">Mint Me </Button>
           </CardFooter>
         </Card>
       </form>

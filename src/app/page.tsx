@@ -27,34 +27,40 @@ import { Box, Container, styled } from "@mui/material";
 
 const modelDetails = [
   {
-    modelName: "Image Classification Model",
+    modelName: "#1 Handwritten Digit Recognition",
     requiredParticipants: 10,
     rewardRate: 100,
     restrictions: [
-      { label: "Android Only", value: "android" },
-      { label: "Share Location", value: "location" },
-      { label: "Upload Images", value: "images" },
+      { label: "Android 8.0+", value: "android" },
+      { label: "Upload Handwritten Digit Images", value: "digit_images" },
+      { label: "Allow Background Processing", value: "background" },
+      { label: "Type : Arabic", value: "type" },
     ],
+    trainingData: "Handwritten digit images from users' devices",
   },
   {
-    modelName: "Image Classification Model",
-    requiredParticipants: 10,
-    rewardRate: 100,
+    modelName: "#2 Facial Expression Recognition",
+    requiredParticipants: 15,
+    rewardRate: 120,
     restrictions: [
-      { label: "Android Only", value: "android" },
-      { label: "Share Location", value: "location" },
-      { label: "Upload Images", value: "images" },
+      { label: "iPhone iOS 10+", value: "ios" },
+      { label: "Access Front Camera", value: "front_camera" },
+      { label: "Upload Facial Expressions", value: "facial_images" },
+      { label: "Allow Real-time Processing", value: "real_time" },
     ],
+    trainingData: "Facial expression images captured from users",
   },
   {
-    modelName: "Image Classification Model",
+    modelName: "#3 Traffic Sign Recognition",
     requiredParticipants: 20,
-    rewardRate: 70,
+    rewardRate: 90,
     restrictions: [
-      { label: "IOS Only", value: "ios" },
-      { label: "Share Location", value: "location" },
-      { label: "Upload Images", value: "images" },
+      { label: "Android 9.0+ or iPhone iOS 11+", value: "cross_platform" },
+      { label: "Access Camera", value: "camera" },
+      { label: "Upload Traffic Sign Images", value: "traffic_sign_images" },
+      { label: "Allow GPS for Traffic Sign Context", value: "gps" },
     ],
+    trainingData: "Traffic sign images with GPS data from users",
   },
 ];
 
