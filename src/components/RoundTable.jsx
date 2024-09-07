@@ -73,8 +73,8 @@ function Row(props) {
                   <TableRow>
                     <TableCell>Name</TableCell>
 
-                    <TableCell align="right">Amount</TableCell>
-                    <TableCell align="right">Total price ($)</TableCell>
+                    <TableCell align="right">Times Selected</TableCell>
+                  
                   </TableRow>
                 </TableHead>
                 <TableBody>
@@ -85,9 +85,7 @@ function Row(props) {
                       </TableCell>
 
                       <TableCell align="right">{historyRow.amount}</TableCell>
-                      <TableCell align="right">
-                        {Math.round(historyRow.amount * row.incentives * 100) / 100}
-                      </TableCell>
+                  
                     </TableRow>
                   ))}
                 </TableBody>
